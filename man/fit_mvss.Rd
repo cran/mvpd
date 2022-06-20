@@ -7,20 +7,20 @@
 fit_mvss(x)
 }
 \arguments{
-\item{x}{a matrix for which the parameters for a d-dimensional multivariate
-subgaussian distribution will be estimated.  The number of columns will be d.}
+\item{x}{a matrix for which the parameters for a \code{d}-dimensional multivariate
+subgaussian distribution will be estimated.  The number of columns will be \code{d}.}
 }
 \value{
 A list with parameters from the column-wise univariate fits and
-the multivariate alpha and shape matrix estimates (the univ_deltas are the mult_deltas):
+the multivariate alpha and shape matrix estimates (the \code{univ_deltas} are the \code{mult_deltas}):
 \itemize{
-\item univ_alphas - the alphas from the column-wise univariate fits
-\item univ_betas  - the betas  from the column-wise univariate fits
-\item univ_gammas - the gammas from the column-wise univariate fits
-\item univ_deltas - the deltas from the column-wise univariate fits
-\item mult_alpha  - the mean(univ_alphas); equivalently the multivariate alpha estimate
-\item mult_Q_raw  - the multivariate shape matrix estimate (before applying \code{nearPD()})
-\item mult_Q_posdef   - the nearest positive definite multivariate shape matrix estimate, \code{nearPD(mult_Q_raw)}
+\item \code{univ_alphas} - the alphas from the column-wise univariate fits
+\item \code{univ_betas}  - the betas  from the column-wise univariate fits
+\item \code{univ_gammas} - the gammas from the column-wise univariate fits
+\item \code{univ_deltas} - the deltas from the column-wise univariate fits
+\item \code{mult_alpha}  - the mean(univ_alphas); equivalently the multivariate alpha estimate
+\item \code{mult_Q_raw}  - the multivariate shape matrix estimate (before applying \code{nearPD()})
+\item \code{mult_Q_posdef}   - the nearest positive definite multivariate shape matrix estimate, \code{nearPD(mult_Q_raw)}
 }
 }
 \description{
@@ -34,10 +34,13 @@ fit functions for each component.
 }
 \examples{
 \donttest{
+## create a 4x4 shape matrix symMat
 S <- matrix(rnorm(4*4, mean=2, sd=4),4); 
 symMat <- as.matrix(Matrix::nearPD(0.5 * (S + t(S)))$mat)
 symMat
+## generate 10,000 r.v.'s from 4-dimensional mvss
 X <- mvpd::rmvss(1e4, alpha=1.5, Q=symMat, delta=c(1,2,3,4))
+## use fit_mvss to recover the parameters, compare to symMat
 fmv <- mvpd::fit_mvss(X)
 fmv
 symMat
@@ -57,6 +60,6 @@ theory and estimation}. Comput Stat (2013) 28:2067–2089
 DOI 10.1007/s00180-013-0396-7
 }
 \seealso{
-Rfast::mvnorm.mle, alphastable::mfitstab.elliptical
+\code{Rfast::mvnorm.mle}, \code{alphastable::mfitstab.elliptical}
 }
 \keyword{distribution}

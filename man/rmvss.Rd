@@ -15,13 +15,13 @@ rmvss(
 \arguments{
 \item{n}{number of observations}
 
-\item{alpha}{default to 1 (Cauchy). Must be 0<alpha<2}
+\item{alpha}{default to 1 (Cauchy). Must be 0<\code{alpha}<2}
 
 \item{Q}{Shape matrix.  See Nolan (2013).}
 
 \item{delta}{location vector.}
 
-\item{which.stable}{defaults to "libstableR", other option is "stabledist".  Indicates which package
+\item{which.stable}{defaults to \code{"libstableR"}, other option is \code{"stabledist"}.  Indicates which package
 should provide the univariate stable distribution in this production distribution form of a univariate
 stable and multivariate normal.}
 }
@@ -35,9 +35,10 @@ distribution for arbitrary alpha, shape matrices, and
 location vectors. See Nolan (2013).
 }
 \examples{
-
+## generate 10 random variates of a bivariate mvss
 rmvss(n=10, alpha=1.71, Q=matrix(c(10,7.5,7.5,10),2))
 
+## generate 10 random variates of a trivariate mvss
 Q <- matrix(c(10,7.5,7.5,7.5,10,7.5,7.5,7.5,10),3)
 rmvss(n=10, alpha=1.71, Q=Q)
 

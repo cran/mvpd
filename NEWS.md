@@ -1,3 +1,8 @@
+# mvpd 0.0.3
+
+* Improved help pages for fit_mvss and rmvss
+* Added more tests
+
 # mvpd 0.0.2
 
 * Added multivariate subgaussian stable capabilities
