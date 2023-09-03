@@ -30,5 +30,5 @@
 #' 
 #' @docType package
 #' @name mvpd
-NULL
+"_PACKAGE"
 #> NULL

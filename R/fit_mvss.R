@@ -6,7 +6,7 @@
 #' distribution for an input matrix X.
 #' 
 #' 
-#' Using the protocols outlined in Nolan (2013), this function uses \code{libstableR}'s univariate 
+#' Using the protocols outlined in Nolan (2013), this function uses \code{libstable4u}'s univariate 
 #' fit functions for each component.  
 #' 
 #' 
@@ -31,7 +31,7 @@
 #' 
 #' @keywords distribution
 #' @importFrom utils combn
-#' @importFrom libstableR stable_fit_mle2d
+#' @importFrom libstable4u stable_fit_mle2d
 #' @importFrom Matrix nearPD
 #' @examples
 #' \donttest{
@@ -59,7 +59,7 @@ fit_mvss <- function(x){
   
   ## x comes in as an nxd matrix.  
   ## the task is to run univariate fit across all the columns
-  component_results <- apply(x, 2, function(W){libstableR::stable_fit_mle2d(W, parametrization = 1L)})
+  component_results <- apply(x, 2, function(W){libstable4u::stable_fit_mle2d(W, parametrization = 1L)})
   
   ## now need to compute the shape matrix Q
   ## according to Nolan 2013, we subtract off the delta estimates
@@ -76,7 +76,7 @@ fit_mvss <- function(x){
   
   if(NCOL(xcp)>1){
     ## now apply the same apply() we did to the original x to this xcp (c-centered p-pairwise sums)
-    xcp_results <- apply(xcp, 2, function(W){libstableR::stable_fit_mle2d(W, parametrization = 1L)})
+    xcp_results <- apply(xcp, 2, function(W){libstable4u::stable_fit_mle2d(W, parametrization = 1L)})
     ## initialize Q_est
     Q_est <- diag(component_results[3,]^2)
     ## do a double assignment to get symmetry, loop over the pairwise combos
@@ -87,7 +87,7 @@ fit_mvss <- function(x){
   
   if(NCOL(xcp)==1){
     ## now apply the same apply() we did to the original x to this xcp (c-centered p-pairwise sums)
-    xcp_results <- libstableR::stable_fit_mle2d(xcp, parametrization = 1L)
+    xcp_results <- libstable4u::stable_fit_mle2d(xcp, parametrization = 1L)
     ## initialize Q_est
     Q_est <- diag(component_results[3,]^2)
     ## do a double assignment to get symmetry, loop over the pairwise combos

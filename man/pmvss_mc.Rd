@@ -10,7 +10,7 @@ pmvss_mc(
   alpha = 1,
   Q = NULL,
   delta = rep(0, d),
-  which.stable = c("libstableR", "stabledist")[1],
+  which.stable = c("libstable4u", "stabledist")[1],
   n = NULL
 )
 }
@@ -25,7 +25,7 @@ pmvss_mc(
 
 \item{delta}{location vector.}
 
-\item{which.stable}{defaults to "libstableR", other option is "stabledist".  Indicates which package
+\item{which.stable}{defaults to "libstable4u", other option is "stabledist".  Indicates which package
 should provide the univariate stable distribution in this production distribution form of a univariate
 stable and multivariate normal.}
 

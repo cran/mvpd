@@ -10,7 +10,7 @@
 #' @param alpha default to 1 (Cauchy). Must be 0<\code{alpha}<2
 #' @param delta location vector.
 #' @param Q Shape matrix.  See Nolan (2013).
-#' @param which.stable defaults to \code{"libstableR"}, other option is \code{"stabledist"}.  Indicates which package
+#' @param which.stable defaults to \code{"libstable4u"}, other option is \code{"stabledist"}.  Indicates which package
 #' should provide the univariate stable distribution in this production distribution form of a univariate
 #' stable and multivariate normal.
 #' @return Returns the \code{n} by \code{d} matrix containing multivariate subgaussian stable 
@@ -22,7 +22,7 @@
 #' @keywords distribution
 #' @importFrom matrixStats rowProds
 #' @importFrom stabledist rstable
-#' @importFrom libstableR stable_rnd
+#' @importFrom libstable4u stable_rnd
 #' @importFrom mvtnorm rmvnorm GenzBretz
 #' @examples
 #' ## generate 10 random variates of a bivariate mvss
@@ -35,14 +35,14 @@
 #'
 #' @export
 rmvss <- function(n, alpha=1, Q = NULL, delta=rep(0,d),
-                  which.stable=c("libstableR", "stabledist")[1]
+                  which.stable=c("libstable4u", "stabledist")[1]
 ){
   d <- nrow(Q)
 
   A <- switch(which.stable,
-              "libstableR" =
+              "libstable4u" =
 
-                libstableR::stable_rnd(n,
+                libstable4u::stable_rnd(n,
                                        pars=c(
                                          alpha = alpha/2,
                                          beta = 1,

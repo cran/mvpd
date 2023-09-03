@@ -1,3 +1,8 @@
+# mvpd 0.0.4
+
+* fixed roxygen token
+* changed reverse depends from libstableR to libstable4u
+
 # mvpd 0.0.3
 
 * Improved help pages for fit_mvss and rmvss

@@ -9,7 +9,7 @@ rmvss(
   alpha = 1,
   Q = NULL,
   delta = rep(0, d),
-  which.stable = c("libstableR", "stabledist")[1]
+  which.stable = c("libstable4u", "stabledist")[1]
 )
 }
 \arguments{
@@ -21,7 +21,7 @@ rmvss(
 
 \item{delta}{location vector.}
 
-\item{which.stable}{defaults to \code{"libstableR"}, other option is \code{"stabledist"}.  Indicates which package
+\item{which.stable}{defaults to \code{"libstable4u"}, other option is \code{"stabledist"}.  Indicates which package
 should provide the univariate stable distribution in this production distribution form of a univariate
 stable and multivariate normal.}
 }

@@ -10,7 +10,7 @@
 #' @param alpha default to 1 (Cauchy). Must be 0<alpha<2
 #' @param delta location vector.
 #' @param Q Shape matrix.  See Nolan (2013).
-#' @param which.stable defaults to "libstableR", other option is "stabledist".  Indicates which package 
+#' @param which.stable defaults to "libstable4u", other option is "stabledist".  Indicates which package 
 #' should provide the univariate stable distribution in this production distribution form of a univariate
 #' stable and multivariate normal.
 #' @param n number of random vectors to be drawn for Monte Carlo calculation.
@@ -41,7 +41,7 @@
 #' @export
 pmvss_mc <- function(lower=rep(-Inf,d), upper=rep(Inf,d), alpha=1, Q = NULL, delta=rep(0,d), 
                           
-                          which.stable=c("libstableR", "stabledist")[1],
+                          which.stable=c("libstable4u", "stabledist")[1],
                           
                           n=NULL
                           

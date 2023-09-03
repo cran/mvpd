@@ -22,7 +22,7 @@ pmvss(
   maxEval.ai = 0,
   absError.ai = 0,
   doChecking.ai = FALSE,
-  which.stable = c("libstableR", "stabledist")[1]
+  which.stable = c("libstable4u", "stabledist")[1]
 )
 }
 \arguments{
@@ -86,7 +86,7 @@ value is FALSE.
 The suffix \code{.ai} indicates a \code{cubature::adaptIntegrate} type
 option for the outermost semi-infinite integral in the product distribution formulation.}
 
-\item{which.stable}{defaults to "libstableR", other option is "stabledist".  Indicates which package
+\item{which.stable}{defaults to "libstable4u", other option is "stabledist".  Indicates which package
 should provide the univariate stable distribution in this production distribution form of a univariate
 stable and multivariate normal.}
 }

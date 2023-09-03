@@ -3,6 +3,7 @@
 \docType{package}
 \name{mvpd}
 \alias{mvpd}
+\alias{mvpd-package}
 \title{Multivariate Product Distributions}
 \description{
 The purpose of this package is to offer density, probability, and
@@ -34,3 +35,15 @@ distribution theory is applied for implementing their computation.
 \code{\link{fit_mvss}} -- Fit a multivariate subgaussian stable distribution (e.g. estimate parameters given data)
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/swihart/mvpd}
+  \item Report bugs at \url{https://github.com/swihart/mvpd/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Bruce Swihart \email{bruce.swihart@gmail.com} (\href{https://orcid.org/0000-0002-4216-9942}{ORCID})
+
+}

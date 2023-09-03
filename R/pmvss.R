@@ -49,7 +49,7 @@
 #' value is FALSE.
 #' The suffix \code{.ai} indicates a \code{cubature::adaptIntegrate} type 
 #' option for the outermost semi-infinite integral in the product distribution formulation.
-#' @param which.stable defaults to "libstableR", other option is "stabledist".  Indicates which package 
+#' @param which.stable defaults to "libstable4u", other option is "stabledist".  Indicates which package 
 #' should provide the univariate stable distribution in this production distribution form of a univariate
 #' stable and multivariate normal.
 #' @return The object returned depends on what is selected for \code{outermost.int}.  In the case of the default, 
@@ -71,7 +71,7 @@
 #' 
 #' @keywords distribution
 #' @importFrom stabledist dstable
-#' @importFrom libstableR stable_pdf
+#' @importFrom libstable4u stable_pdf
 #' @importFrom mvtnorm pmvnorm GenzBretz
 #' @importFrom stats integrate
 #' @examples
@@ -119,15 +119,15 @@ pmvss <-
            absError.ai=0,
            doChecking.ai=FALSE,
            
-           which.stable=c("libstableR", "stabledist")[1]
+           which.stable=c("libstable4u", "stabledist")[1]
            
   ){
     
     
     f_A <- switch(which.stable,
-                  "libstableR" =
+                  "libstable4u" =
                     function(x, alpha) 
-                      libstableR::stable_pdf(x,
+                      libstable4u::stable_pdf(x,
                                              pars=c(
                                                alpha = alpha/2,
                                                beta = 1,
@@ -149,10 +149,10 @@ pmvss <-
     
     
     f_B <- switch(which.stable,
-                  "libstableR" = 
+                  "libstable4u" = 
                     function(x, alpha)
                       2*x*
-                    libstableR::stable_pdf(x^2,
+                    libstable4u::stable_pdf(x^2,
                                            pars=c(
                                              alpha = alpha/2,
                                              beta = 1,

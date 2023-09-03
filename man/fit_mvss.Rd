@@ -29,7 +29,7 @@ of the multivariate subgaussian
 distribution for an input matrix X.
 }
 \details{
-Using the protocols outlined in Nolan (2013), this function uses \code{libstableR}'s univariate
+Using the protocols outlined in Nolan (2013), this function uses \code{libstable4u}'s univariate
 fit functions for each component.
 }
 \examples{
